@@ -14,6 +14,12 @@ func _ready():
 func _physics_process(_delta):
 	if dying:
 		queue_free()
+		if selected:
+		$Select.show()
+		$Selected.emitting = true
+	else:
+		$Select.hide()
+		$Selected.emitting = false
 		
 
 func move_piece(change):
